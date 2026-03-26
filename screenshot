@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+choice=$(printf "screen\narea\nwindow" | dmenu -i)
+
+case "$choice" in
+  screen) maim | xclip -selection clipboard -t image/png ;;
+  area) maim -s | xclip -selection clipboard -t image/png ;;
+  window) maim -i "$(xdotool getactivewindow)" | xclip -selection clipboard -t image/png ;;
+esac
