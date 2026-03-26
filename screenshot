@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 
-choice=$(printf "screen\narea\nwindow" | dmenu -i)
+DMENU="dmenu -i \
+-fn 'Iosevka Nerd Font Mono:size=14' \
+-nb '#10141c' \
+-nf '#bfbdb6' \
+-sb '#e89d37' \
+-sf '#10141c'"
+
+choice=$(printf "screen\narea\nwindow" | eval "$DMENU")
 
 case "$choice" in
   screen) maim | xclip -selection clipboard -t image/png ;;
