@@ -1,11 +1,18 @@
 #!/usr/bin/env bash
 
+BG="#050505"
+SEL_BG="#111111"
+
+FG="#808080"
+SEL_FG="#FFFFFF"
+
 DMENU="dmenu -i \
--fn 'Iosevka Nerd Font Mono:size=14' \
--nb '#10141c' \
--nf '#bfbdb6' \
--sb '#e89d37' \
--sf '#10141c'"
+-fn 'Iosevka Nerd Font:size=11' \
+-nb '$BG' \
+-nf '$FG' \
+-sb '$SEL_BG' \
+-sf '$SEL_FG' \
+-p 'Screenshot'"
 
 choice=$(printf "screen\narea\nwindow" | eval "$DMENU")
 
